@@ -12,9 +12,7 @@ Route::middleware('guest')->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
-
     Route::get('/', function(){
         echo 'Olá mUndo';
     });
-
-});
+})->name('home');
