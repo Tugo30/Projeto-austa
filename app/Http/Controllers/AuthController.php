@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -14,13 +15,13 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function authenticate(Request $request)
+    public function authenticate(Request $request) : RedirectResponse
     {
         // validação do formulário
         $credentials = $request->validate(
             [
                 'username' => 'required|min:3|max:30',
-                'password' => 'required|min:8|max:32|regex:/^(?=.*[a-z])(?=;*[A-Z])(?=.*\d).+$/'
+                'password' => 'required|min:8|max:32|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'
             ],
             [
                 'username.required' => 'O usuário é obrigatório',
@@ -76,4 +77,30 @@ class AuthController extends Controller
         // redirecionar
         return redirect()->intended(route('home'));
     }
+
+    public function logout() : RedirectResponse
+    {
+        // logout
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+    public function register(): View
+    {
+        return view('auth.register');
+    }
+
+    public function store_user(Request $request) : void
+    {
+        // form validation
+        $request->validate(
+            [
+                'username' => 'required|min:3|max:30|unique:users,username',
+                'email' => 'required|email|unique:users,email'
+            ]
+        );
+
+        echo 'FIM';
+    }
+
 }
