@@ -95,10 +95,6 @@ Acesse o sistema em `http://localhost:8000`.
 - Certifique-se de que as roles (`admin`, `user`) estejam corretamente definidas na tabela `users`
 - O projeto ainda está em desenvolvimento (cerca de 80% concluído)
 
-## 📷 Prints (opcional)
-
-Adicione aqui capturas de tela do sistema ou um GIF demonstrando as principais funcionalidades.
-
 ## 👨‍💻 Autor
 
 Arthur Rezende Sant’ana – [@cagu1n](https://github.com/cagu1n)
