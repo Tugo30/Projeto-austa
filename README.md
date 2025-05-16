@@ -97,4 +97,4 @@ Acesse o sistema em `http://localhost:8000`.
 
 ## 👨‍💻 Autor
 
-Arthur Rezende Sant’ana – [@cagu1n](https://github.com/cagu1n)
+Arthur Rezende Sant’ana – [@cagu1n](https://github.com/Tugo30)
