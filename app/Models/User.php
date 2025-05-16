@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticable;
 
 class User extends Authenticable
 {
-    // atributes that are hidden for serialzation
+    use SoftDeletes;
+    
     protected $hidden = [
         'password',
         'token'
